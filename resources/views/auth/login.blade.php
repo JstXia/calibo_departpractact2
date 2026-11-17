@@ -1,0 +1,5 @@
+@extends('layouts.app')
+@section('title','Sign in')
+@section('content')
+<main class="login-shell"><div class="card login-card"><div class="eyebrow">RallyStock inventory</div><h1 class="title">Welcome back</h1><p class="muted">Sign in to manage pickleball equipment.</p><form method="POST" action="{{ route('login.store') }}">@csrf<div class="field"><label for="login">Email or username</label><input id="login" name="login" value="{{ old('login') }}" required autofocus>@error('login')<div class="error">{{ $message }}</div>@enderror</div><div class="field"><label for="password">Password</label><input id="password" type="password" name="password" required>@error('password')<div class="error">{{ $message }}</div>@enderror</div><label class="small"><input type="checkbox" name="remember" style="width:auto"> Remember me</label><button class="btn" style="width:100%;margin-top:18px">Sign in</button></form><p class="small muted" style="margin-top:20px">Demo account: admin@example.com / password</p></div></main>
+@endsection
